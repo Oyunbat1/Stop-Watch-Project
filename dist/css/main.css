@@ -1,3 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Bebas Neue", serif;
+}
 
+body {
+  background-color: rgb(57, 190, 205);
+  color: #fff;
+}
+
+.positioning {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.positioning .timer-container {
+  background-color: rgb(42, 138, 148);
+  height: 400px;
+  width: 700px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.positioning .timer-container .title h2 {
+  letter-spacing: 2px;
+}
+.positioning .timer-container .timer-clock p {
+  font-size: 140px;
+}
+.positioning .timer-container .buttons {
+  display: flex;
+  gap: 30px;
+}
+.positioning .timer-container .buttons button {
+  padding: 15px 50px;
+  border-radius: 20px;
+  border: none;
+  font-size: 16px;
+  transition: 0.5s all;
+}
+.positioning .timer-container .buttons button:hover {
+  background-color: rgb(57, 190, 205);
+  color: #fff;
+  transition: 0.5s all;
+}
 
 /*# sourceMappingURL=main.css.map */
