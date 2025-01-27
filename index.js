@@ -1,15 +1,27 @@
-const start = document.getElementById('Start');
-start.addEventListener('click',function Starter() {
-    const d = new Date();
-    const getStringHours =  document.getElementById("demo").innerHTML = d.toLocaleTimeString();
-    const getValueHours = parseInt(getStringHours.replace('PM',''));
-    document.body.append(getValueHours);    
-    var myStarter  = setInterval(Starter, 1000); 
-    return myStarter;
-  })
+const date = new Date();
+date.setHours(0,0,0,0);
 
-  const Stop = document.getElementById('Stop');
-  Stop.addEventListener('click',function Stop(){
-    alert('hello')
-    clearInterval(myStarter);
-  })
+function EstimateHours(){
+  date.setSeconds(date.getSeconds()+1);
+  const finalTime = date.toTimeString().split(' ')[0];
+  document.getElementById("demo").innerHTML = finalTime;
+}
+let KeepInterval;
+const startButton =  document.getElementById('Start').addEventListener('click',()=>{
+ KeepInterval =  setInterval(EstimateHours,1000);
+})
+
+
+const stopButton =  document.getElementById('Stop').addEventListener('click',()=>{
+    clearInterval(KeepInterval);
+    
+ }) 
+
+
+
+const resetButton =  document.getElementById('Reset').addEventListener('click',()=>{
+// document.getElementById('demo').textContent = '00:00:00'
+clearInterval(KeepInterval);
+date.setHours(0,0,0,0);
+document.getElementById('demo').innerHTML = "00:00:00";
+})
